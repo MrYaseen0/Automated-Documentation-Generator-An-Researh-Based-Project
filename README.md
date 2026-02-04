@@ -1,74 +1,189 @@
-# 🚀 Automated Documentation Generator
-### *An Intelligence-Driven Engine for Code Synthesis*
+# Automated Documentation Generator
 
-## 👤 Lead Developer
-**Yaseen Ahmad**
-*Registration ID: CU-4417-C-2023*
-*Software Engineering Student @ CECOS University*
+[![CECOS University](https://img.shields.io/badge/University-CECOS%20Peshawar-blue)](https://www.cecos.edu.pk/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> *"Software architecture is the art of designing systems that are as readable to humans as they are executable by machines."*
+## Overview
 
----
+This project, developed as part of the Software Architecture & Design course at CECOS University Peshawar, aims to automate the generation of technical documentation for source code using generative AI models and natural language processing (NLP). It addresses the challenge of maintaining high-quality, consistent documentation in software development by leveraging large language models (LLMs) to produce inline comments, API docs, function descriptions, and more.
 
-[![Research-Grade](https://img.shields.io/badge/Project-Research--Based-blueviolet)](#)
-[![Accuracy](https://img.shields.io/badge/Parsing--Accuracy-96%25-green)](#)
-[![Course](https://img.shields.io/badge/Course-Software--Architecture--%26--Design-blue)](#)
+The system integrates into CI/CD pipelines to create "living documentation" that updates automatically with code changes, reducing developer workload, ensuring uniformity, and improving software maintainability. It supports multiple programming languages (Python, Java, JavaScript, C++, Go) and includes features for consistency validation and quality evaluation.
 
-**Bridging the gap between raw code and human-readable prose.** This system isn't just a text generator; it is a sophisticated pipeline built to solve the "Documentation Debt" in modern software engineering. Developed for the Software Architecture & Design curriculum at **CECOS University**, it integrates Transformer-based LLMs with AST-level validation.
+**Submitted by:** Yaseen Ahmad (ID: CU-4417-C-2023)  
+**Submitted to:** Dr. Faryal  
+**Date:** January 22, 2026
 
----
+## Problem Domain and Motivation
 
-## 🔬 The Innovation: "Living Documentation"
-In high-velocity development, documentation is often a "static snapshot" that becomes obsolete within hours. This engine transforms it into a **Living Entity**.
+### Problem Domain
+The project operates at the intersection of software engineering and NLP, focusing on automating documentation generation from source code. Key elements include:
+- Parsing code structures (functions, classes, methods).
+- Generating natural language descriptions.
+- Evaluating output against human-written standards.
 
-* **Prose Reduction:** Reduces developer overhead by **70%**.
-* **AST Grounding:** Unlike standard AI, every output is cross-referenced against the **Abstract Syntax Tree** to ensure technical truth.
-* **Architecture-First:** Built on a **Decoupled Client-Server Model** for enterprise-level scalability.
+### Motivation
+- **Economic:** Saves time for senior engineers, redirecting focus from writing docs to solving architectural problems.
+- **Quality Assurance:** Enforces consistent style, voice, and detail across large codebases.
+- **Living Documentation:** Integrates with CI/CD to update docs on every commit, treating documentation as a compilable artifact.
 
----
+### Importance
+- Reduces software maintenance costs (60-90% of lifecycle expenses).
+- Enhances open-source project accessibility.
+- Advances AI trustworthiness in technical domains.
+- Improves developer experience by alleviating documentation burdens.
 
-## 🏗️ Technical Architecture & Pipeline
-The project utilizes a deep structural analysis pipeline to ensure that the generated documentation reflects the *intent* of the code, not just the syntax.
+### Challenges
+1. Accuracy in reflecting code behavior.
+2. Consistency in style and terminology.
+3. Capturing broader architectural context.
+4. Defining metrics for documentation quality.
+5. Mitigating LLM biases.
 
-### 1. Lexical Scanning & Multi-Language Support
-Optimized for: `Python`, `Java`, `JavaScript`, `C++`, and `Go`.
+## Scope
 
-### 2. Contextual Logic Extraction
-The engine identifies:
-* Function Signatures & Parameter types.
-* Internal logic flows and branching.
-* Return value dependencies.
+### Included
+- Generating inline comments for functions/methods.
+- API documentation from code signatures.
+- Function/method descriptions.
+- Evaluation against human-written documentation.
 
-### 3. Transformer Inference Layer
-Utilizes state-of-the-art models (**GPT-4o** and **LLaMA 3**) to synthesize high-fidelity docstrings that follow industry standards (Google, NumPy, or JSDoc styles).
+### Excluded
+- Generating complete user manuals.
+- Documentation for binary/compiled code.
+- Real-time documentation during coding.
+- Integration with all programming languages.
 
-### 4. Integrity Validation (The AST Gatekeeper)
-Every generated comment is validated against the code's structural map. If a parameter or return type is missing in the AI's output, the system flags it for re-generation, maintaining **96% parsing accuracy**.
+## Features
 
----
+### Functional Requirements
+- **Code Parsing and Preprocessing (FR1):** Parse files in supported languages, extract structures, identify segments needing docs, handle edge cases.
+- **Documentation Generation (FR2):** Inline comments, docstrings, class-level docs, README-style module docs.
+- **Consistency Validation (FR3):** Compare docs to code semantics, detect contradictions, flag incompletes, generate reports.
+- **Quality Evaluation (FR4):** Compute metrics (BLEU, ROUGE, semantic similarity), support human workflows, compare AI vs. human docs, produce dashboards.
+- **System Management (FR5):** Batch processing, version-controlled storage, logging, prompt engineering support.
 
-## 📊 Performance Metrics
-* **Latency:** Average generation time of **3.2s** per complex function.
-* **Precision:** **96% Accuracy** verified against standard library benchmarks.
-* **Design Pattern:** Implements a strict **Decoupled Architecture** to minimize local resource consumption.
+### Non-Functional Requirements
+- **Performance (NFR1):** Function docs in 2-5s, 1MB codebase in <1hr, consistency checks <200ms.
+- **Scalability (NFR2):** Handle 100KB-100MB codebases, 100+ concurrent requests, caching for efficiency.
+- **Reliability (NFR3):** Graceful error handling, 99.5% uptime, retries with backoff.
+- **Maintainability (NFR4):** Modular design, logging, config-driven, separation of concerns.
+- **Security (NFR5):** Sanitize code, encrypt data, offline support, audit logs.
+- **Consistency (NFR6):** Deterministic outputs, version control for models/prompts, multi-run metrics.
 
----
+## Architecture
 
-## 🛠️ Technology Stack
-* **Language:** Python 3.x
-* **Parsing:** Abstract Syntax Tree (AST) modules
-* **Models:** GPT-4o / LLaMA 3
-* **Environment:** Decoupled Client-Server Infrastructure
+### Application Type
+- **Language Processing System:** Core NLP for code understanding and text generation.
+- **Information System:** Manages documentation data.
+- **Transaction Processing System:** Handles generation requests with ACID properties (Atomicity, Consistency, Isolation, Durability).
 
----
+### Key Principles
 
-## 🎓 Academic Context
-* **Institution:** CECOS University, Peshawar
-* **Department:** Software Engineering
-* **Course:** Software Architecture & Design
-* **Instructor:** Dr. Faryal
+| Principle              | Application in Project                          | Benefit                          |
+|------------------------|-------------------------------------------------|----------------------------------|
+| Separation of Concerns | Independent modules for parsing, generation, evaluation | Easier maintenance and testing  |
+| Modularity             | Plug-in for LLMs and languages                  | Extensibility and independence  |
+| Abstraction            | Unified interface for doc types                 | Simplified API for users        |
+| Loose Coupling         | Message queues between stages                   | Independent scaling             |
+| High Cohesion          | Grouped related functionality                  | Reduced complexity              |
 
----
+### Model Selection and Trade-offs
+The project evaluates LLMs based on benchmarks:
 
+| Feature          | LLaMA 3 (70B Instruct) | Mistral Large / Mixtral 8x7B | GPT-4o (OpenAI) |
+|------------------|------------------------|------------------------------|-----------------|
+| Reasoning Depth | High (excellent logic) | Moderate-High (good, but may miss subtleties) | Very High (benchmark leader) |
+| Context Window  | 8k-128k (variant)     | 32k                         | 128k (whole files) |
+| Throughput/Speed| Low (heavy GPU)       | High (MoE efficient)        | Variable (API)    |
+| Deployment      | Self-Hosted (Privacy++)| Self-Hosted (Privacy++)     | SaaS (Privacy-)   |
+| Cost            | High CAPEX (Hardware) | Moderate CAPEX              | High OPEX (Tokens)|
+| Use Case        | Enterprise On-Prem Batch | Real-time Inline / IDE      | High-Accuracy Docs|
 
-*© 2026 | Research-Driven Software Design*
+### Transaction Flow
+1. Request Receipt → API Gateway
+2. Validation → Input Service
+3. Code Processing → Parser/Analyzer
+4. Generation → LLM Inference
+5. Evaluation → Quality Assessment
+6. Response → Result Aggregation
+
+### NLP Components
+
+| Component          | Purpose                          | Technology                     |
+|--------------------|----------------------------------|--------------------------------|
+| Code Understanding| Parse syntax/semantics           | ASTs, static analysis          |
+| Text Generation   | Produce docs                     | Instruction-tuned LLMs (LLaMA, Mistral) |
+| Evaluation        | Assess quality                   | Embeddings, BLEU, ROUGE, BERTScore |
+| Consistency Check | Verify code-doc alignment        | Cross-encoder, semantic similarity |
+
+### Quality Attributes
+- **Scalability:** Microservices with Kubernetes, horizontal scaling, Redis caching. Metrics: Linear scaling, <2x latency under 10x load, supports 10,000+ files.
+- **Maintainability:** Hexagonal architecture, >80% test coverage, MTTR <4 hours. Indicators: Cyclomatic complexity <15, version pinning.
+- **Reliability:** Circuit breakers, monitoring, backups. Targets: MTBF >720 hours, RTO <1 hour, no data loss.
+
+### Mathematical Foundation
+- Semantic Similarity: $$ \text{similarity}(D_g, D_r) = \frac{\mathbf{v_g} \cdot \mathbf{v_r}}{\|\mathbf{v_g}\| \|\mathbf{v_r}\|} $$ (using BERT embeddings).
+- Consistency Score: $$ \text{consistency}(C, D) = \frac{1}{n} \sum_{i=1}^{n} \text{sim}(f_i(C), s_i(D)) $$ (feature extraction from code/docs).
+
+## Installation
+
+(Assuming this repo contains the implementation code; adjust as needed.)
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/automated-documentation-generator.git
+   ```
+
+2. Install dependencies (Python 3.12+):
+   ```
+   pip install -r requirements.txt
+   ```
+   - Required libraries: numpy, scipy, pandas, sympy, torch (for ML), etc.
+   - LLM backends: LLaMA/Mistral via Hugging Face, or OpenAI API.
+
+3. Configure environment:
+   - Set API keys for external LLMs (e.g., OpenAI).
+   - Update `config.yaml` for model selection and prompts.
+
+## Usage
+
+### Basic Command
+```
+python main.py --input path/to/code/repo --output path/to/docs --model llama3
+```
+
+### Examples
+- Generate docs for a Python file:
+  ```
+  python generate_docs.py --file example.py --type inline
+  ```
+- Batch process a repo:
+  ```
+  python batch_process.py --repo /my/repo --evaluate true
+  ```
+- Run consistency check:
+  ```
+  python validate.py --code example.py --docs generated.md
+  ```
+
+Integrate with CI/CD (e.g., GitHub Actions) for automatic doc updates on commits.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+1. Fork the repo.
+2. Create a feature branch (`git checkout -b feature/new-feature`).
+3. Commit changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature/new-feature`).
+5. Open a Pull Request.
+
+Focus on improving parsing for new languages, adding metrics, or optimizing performance.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- CECOS University Peshawar, Department of Software Engineering.
+- Inspired by advancements in generative AI for software engineering.
