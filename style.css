@@ -1,0 +1,15 @@
+.code-output {
+    min-height: 300px;
+    font-family: monospace;
+}
+.bg-primary {
+    background-color: #4c3cce !important; /* Adjust matching the screenshot */
+}
+.btn-primary {
+    background-color: #4c3cce;
+    border-color: #4c3cce;
+}
+.btn-primary:hover {
+    background-color: #3b2ebd;
+    border-color: #3b2ebd;
+}
