@@ -1,0 +1,65 @@
+/* General Reset and Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Match bg-light */
+}
+
+/* Header Styling */
+header {
+    background-color: #4a47d1; /* Main Blue/Purple color from screenshots */
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+header p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Card Adjustments */
+.card {
+    border-radius: 4px !important; /* Slightly rounded edges, matching images */
+}
+
+/* Button Styling */
+#generateBtn {
+    background-color: #4a47d1;
+    border-color: #4a47d1;
+    border-radius: 4px !important;
+}
+
+#generateBtn:hover, #generateBtn:focus {
+    background-color: #3b39a8;
+    border-color: #3b39a8;
+}
+
+/* Input Styles */
+textarea#codeInput {
+    font-family: Consolas, Monaco, "Courier New", Courier, monospace;
+    font-size: 0.95rem;
+    resize: none; /* Prevent manual resize to maintain layout */
+    background-color: #fdfdfd;
+}
+
+input[type="file"].form-control {
+    font-size: 0.95rem;
+}
+
+/* Output Area Styling */
+pre#outputText {
+    background-color: #2d2d2d; /* Dark gray for output box */
+    color: #e0e0e0;
+    font-family: Consolas, Monaco, "Courier New", Courier, monospace;
+    font-size: 0.95rem;
+    white-space: pre-wrap; /* Wrap long lines if needed */
+    overflow-x: auto;
+    border-radius: 4px !important;
+    min-height: 250px;
+}
+
+/* Utility class to hide elements */
+.hidden {
+    display: none !important;
+}
