@@ -1,0 +1,56 @@
+/* Custom overrides for specific layout elements */
+
+body {
+    background-color: #f4f6f9 !important; /* Slightly distinct background for contrast */
+}
+
+/* Header specific styling */
+header {
+    background-color: #4b3fda !important; /* Match the purple-blue header from screenshots */
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+}
+
+/* Card adjustments */
+.card {
+    border-radius: 8px;
+}
+
+.card-title {
+    font-size: 1.1rem;
+}
+
+/* Utility classes for toggling visibility */
+.hidden {
+    display: none !important;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Custom button color */
+.btn-primary {
+    background-color: #4b3fda;
+    border-color: #4b3fda;
+}
+
+.btn-primary:hover {
+    background-color: #3b2fc4;
+    border-color: #3b2fc4;
+}
+
+/* Dark theme for output code block */
+pre.bg-dark {
+    background-color: #2d2d2d !important;
+    border-color: #444 !important;
+}
+
+code {
+    color: #e0e0e0;
+}
