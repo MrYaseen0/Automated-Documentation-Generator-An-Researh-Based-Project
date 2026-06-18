@@ -1,0 +1,13 @@
+/* Custom styles for Generative AI Documentation Generator */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+#loadingState {
+    min-height: 350px;
+}
+
+#resultsArea pre {
+    margin-bottom: 0;
+}
