@@ -1,0 +1,209 @@
+\documentclass[12pt, a4paper]{report}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+\usepackage{mathptmx} % Times New Roman-like font for professional look
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{booktabs} % For professional tables
+\usepackage{tikz}     % For the beautiful title page graphics
+\usetikzlibrary{calc}
+\usepackage{fancyhdr}
+\usepackage{lipsum}   % For dummy text if needed
+\usepackage{amsmath}  % For mathematical formulas
+
+% Geometry Settings
+\geometry{
+    top=2.5cm,
+    bottom=2.5cm,
+    left=3cm,   % Extra margin for binding
+    right=2.5cm
+}
+
+% Color Definitions (Matching University Themes)
+\definecolor{cuiblue}{RGB}{0, 51, 102} % Dark Navy Blue
+\definecolor{cuigold}{RGB}{218, 165, 32} % Goldenrod accent
+
+% Hyperlink Setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cuiblue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Automated Documentation Generator},
+    pdfpagemode=FullScreen,
+}
+
+% Chapter Title Formatting
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\Huge}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT BEGINS
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	BEAUTIFUL TITLE PAGE DESIGN
+%----------------------------------------------------------------------------------------
+\begin{titlepage}
+    \begin{tikzpicture}[remember picture, overlay]
+        % Sidebar Decoration
+        \fill[cuiblue] (current page.north west) rectangle ([xshift=3cm]current page.south west);
+        \fill[cuigold] ([xshift=2.8cm]current page.north west) rectangle ([xshift=3cm]current page.south west);
+
+        % Corner Decoration
+        \node[opacity=0.1, anchor=north east] at (current page.north east) {\includegraphics[width=10cm]{example-image}}; % Placeholder for Logo watermark
+    \end{tikzpicture}
+
+    \centering
+    \vspace*{1cm}
+
+    % Header
+    {\Large \scshape CECOS University Peshawar}\\[0.5cm]
+    {\large \scshape Department of Software Engineering}\\[2cm]
+
+    % Main Title with Rules
+    \rule{0.9\textwidth}{1pt} \\[0.4cm]
+    { \huge \bfseries \color{cuiblue}   \\[0.3cm] Automated Documentation Generator } \\[0.4cm]
+    \rule{0.9\textwidth}{1pt} \\[2cm]
+
+    % Assignment Info
+    {\Large \textbf{Subject:} Software Architecture \& Design}\\[0.5cm]
+    {\Large \textbf{Project }}\\[2cm]
+
+    % Student and Instructor Details (Side by Side)
+    \noindent
+    \begin{minipage}{0.45\textwidth}
+        \begin{flushleft} \large
+            \emph{Submitted By:}\\
+            \textbf{Yaseen Ahmad}\\
+            \textbf{ID:} CU-4417-C-2023
+        \end{flushleft}
+    \end{minipage}%
+    \begin{minipage}{0.45\textwidth}
+        \begin{flushright} \large
+            \emph{Submitted To:}\\
+            \textbf{Course Instructor}\\
+            Dr. Faryal
+        \end{flushright}
+    \end{minipage}
+
+    \vfill
+
+    % Date
+    {\Large \textbf{Dated:} 22-01-2026}\\[1cm]
+
+    % Footer Logo (Optional)
+    % \includegraphics[width=3cm]{university_logo.png}
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1: INTRODUCTION
+%----------------------------------------------------------------------------------------
+\chapter{Introduction}
+
+\section{Overview of the Study}
+The domain of software engineering has historically prioritized functional correctness and execution speed over the maintainability of the accompanying documentation...
+
+\section{Research Objectives}
+The primary motivation for this project is to reduce the extra load from the software engineers...
+\begin{itemize}
+    \item \textbf{Economic Motivation:} The time spent by senior engineers writing documentation is expensive.
+    \item \textbf{Quality Assurance:} Inconsistent documentation styles across a large organization lead to confusion.
+    \item \textbf{Living Documentation:} The ultimate goal is to transform documentation from a static snapshot into a living entity.
+\end{itemize}
+
+\section{Scope of the Solution}
+The following table outlines the boundaries of the proposed system:
+
+\begin{table}[h]
+    \centering
+    \caption{Scope of the Automated Documentation Solution}
+    \begin{tabular}{@{}lp{8cm}@{}}
+        \toprule
+        \textbf{Category} & \textbf{Details} \\
+        \midrule
+        Included & Generating inline comments for functions/methods \\
+                 & API documentation from code signatures \\
+                 & Function/method descriptions \\
+                 & Evaluation against human-written documentation \\
+        \midrule
+        Excluded & Generating complete user manuals \\
+                 & Documentation for binary/compiled code \\
+                 & Real-time documentation during coding \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 2: LITERATURE REVIEW
+%----------------------------------------------------------------------------------------
+\chapter{Literature Review}
+
+\section{Theoretical Framework}
+This project operates in the intersection of software engineering and natural language processing (NLP). The core problem is automating the generation of technical documentation...
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3: RESEARCH METHODOLOGY
+%----------------------------------------------------------------------------------------
+\chapter{Research Methodology}
+
+\section{Research Design and Approach}
+The system architecture supports the following functional requirements (FRs) and non-functional requirements (NFRs)...
+
+\section{Data Analysis Techniques}
+We define the Semantic Similarity between generated ($D_g$) and reference ($D_r$) documentation:
+\begin{equation}
+    similarity(D_g, D_r) = \frac{v_g \cdot v_r}{\|v_g\| \|v_r\|}
+\end{equation}
+where $v_g, v_r$ are embeddings from models like BERT.
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 4: RESULTS AND DISCUSSION
+%----------------------------------------------------------------------------------------
+\chapter{Results and Discussion}
+
+\section{Application Architecture}
+The application leverages a microservices approach. Below is the comparison of model selection:
+
+\begin{table}[ht]
+    \centering
+    \caption{Model Selection and Trade-offs}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Feature} & \textbf{LLaMA 3 (70B)} & \textbf{Mistral Large} & \textbf{GPT-4o} \\
+        \midrule
+        Reasoning Depth & High & Moderate-High & Very High \\
+        Context Window & 8k-128k & 32k & 128k \\
+        Privacy & Self-Hosted & Self-Hosted & SaaS \\
+        Cost & High CAPEX & Moderate CAPEX & High OPEX \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Discussion of Implications}
+\textbf{Economic Impact:} Reduces software maintenance costs (estimated at 60-90\% of total software lifecycle cost).
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 5: CONCLUSION
+%----------------------------------------------------------------------------------------
+\chapter{Conclusion and Recommendations}
+
+\section{Key Findings}
+The architecture provides a robust foundation for building, evaluating, and deploying an automated documentation generation system...
+
+\end{document}
