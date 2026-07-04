@@ -1,0 +1,49 @@
+/* General Styles */
+body {
+    background-color: #f3f4f6 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Header Section */
+.header-section {
+    background-color: #4f46e5; /* Indigo/Purple color matching the screenshot */
+}
+
+/* Card Styling */
+.input-card, .output-card {
+    min-height: 80vh;
+}
+
+/* Form Controls */
+.code-textarea {
+    resize: none;
+    font-family: monospace;
+}
+
+/* Generate Button */
+.generate-btn {
+    background-color: #4f46e5 !important;
+    border-color: #4f46e5 !important;
+}
+
+.generate-btn:hover {
+    background-color: #4338ca !important;
+    border-color: #4338ca !important;
+}
+
+/* AI Output Box */
+.output-box {
+    background-color: #282c34 !important; /* Dark grey/black for code output */
+    color: #abb2bf !important;
+    border: none;
+    min-height: 500px;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+hr {
+    border-top: 1px solid #e5e7eb;
+}
