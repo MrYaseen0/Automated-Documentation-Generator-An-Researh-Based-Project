@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Driven Documentation Generator</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Header Section -->
+    <header class="header-section text-white py-4 px-4 mb-4">
+        <div class="container-fluid">
+            <h1 class="fw-bold mb-1">Generative AI Documentation Generator</h1>
+            <p class="mb-0 fs-6">An Website where you can upload or paste source code and see your documentation</p>
+            <p class="mb-0 fs-6">Project of Software Architecture & Design</p>
+            <p class="mb-0 fs-6">Powered by Yaseen Ahmad</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container-fluid px-4">
+        <div class="row g-4">
+
+            <!-- Left Column: Input Form -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-100 p-4">
+                    <h4 class="mb-4 text-dark fw-semibold">Please Input Source Code Here</h4>
+
+                    <form id="codeForm">
+                        <!-- File Upload -->
+                        <div class="mb-4">
+                            <label class="form-label text-dark fw-medium">Upload Your Source Code (Python, Java, C++, JS, Go)</label>
+                            <input class="form-control" type="file" id="fileInput">
+                        </div>
+
+                        <!-- Text Area -->
+                        <div class="mb-3">
+                            <label class="form-label text-dark fw-medium">Or Paste Code Directly:</label>
+                            <textarea class="form-control code-input" id="codeInput" rows="12" placeholder="// 1. Hide results and show loading spinner
+resultsArea.classList.add('hidden');
+loadingState.classList.remove('hidden');
+loadingState.classList.add('flex');
+
+// 2. Simulate the AI generation delay (2.5 seconds to meet NFR1.1)
+setTimeout(() => {
+
+    // 3. Hide loading spinner
+    loadingState.classList.add('hidden');
+    loadingState.classList.remove('flex');
+});"></textarea>
+                        </div>
+
+                        <!-- Submit Button (Not clearly visible in screenshot but logically needed, optionally we can trigger on change/typing or have a button) -->
+                        <button type="submit" class="btn btn-primary d-none" id="generateBtn">Generate</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right Column: AI Output -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-100 p-4">
+                    <h4 class="mb-4 text-dark fw-semibold">AI-Generated Output</h4>
+
+                    <div>
+                        <p class="fw-bold mb-2">Generated Docstring & Inline Comments :</p>
+
+                        <div class="output-container p-3 rounded">
+                            <pre class="m-0 text-light"><code id="outputCode">"""
+Calculates the final price of an item including tax.
+
+Args:
+    price (float): The base price of the item.
+    tax (float): The tax rate as a decimal (e.g., 0.15 for 15%)
+
+Returns:
+    float: The total price including tax.
+"""
+def calculate_total(price, tax):
+    # Calculate tax amount
+    tax_amount = price * tax
+    # Return total sum
+    return price + tax_amount</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
