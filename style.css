@@ -1,0 +1,62 @@
+/* Custom Styles for Generative AI Documentation Generator */
+
+body {
+    background-color: #f4f6f9; /* Light grey background */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+header {
+    background-color: #4b3dcc !important; /* Custom purple/blue header */
+}
+
+/* Make header image look good */
+header img {
+    border-radius: 50%;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05) !important;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.card-title.text-primary {
+    color: #4b3dcc !important;
+}
+
+.card-title.text-success {
+    color: #28a745 !important;
+}
+
+.form-label {
+    letter-spacing: 0.5px;
+}
+
+textarea.form-control {
+    border: 1px solid #dee2e6;
+    resize: vertical;
+}
+
+textarea.form-control:focus {
+    border-color: #4b3dcc;
+    box-shadow: 0 0 0 0.2rem rgba(75, 61, 204, 0.25);
+}
+
+.btn-primary {
+    background-color: #5b42f3 !important;
+    border-color: #5b42f3 !important;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #4b35d6 !important;
+}
+
+pre {
+    background-color: #2d2d2d !important;
+    border-left: 4px solid #4b3dcc;
+}
